@@ -13,7 +13,7 @@ namespace Worktimer
     public partial class Loader : Form
     {
         Handlers.Ini_Handler Config = new Handlers.Ini_Handler();
-        Form1 Timer_Window = new Form1();
+        MainForm Timer_Window = new MainForm();
      
 
         public Loader()
@@ -28,7 +28,7 @@ namespace Worktimer
             // If everything is set correctly show Timer_Window and close this ---- Changed it so the Program.cs check if it exist, if it does it wont load this file.
           
             Config.Write("SaveTxt", "1", "Saving");
-            Config.Write("SaveTxt_Path", System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\data\\", "Saving");
+            Config.Write("SaveTxt_Path", @"\data\", "Saving");
 
             Config.Write("SaveDB", "0", "Saving");
             Config.Write("SaveDB_Host", "hostname", "Saving");

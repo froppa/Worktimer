@@ -32,37 +32,32 @@ using System.Windows.Forms;
 
 namespace Worktimer
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         libs.Timer_Functions Timer;
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
-            Timer = new libs.Timer_Functions(this.Counter_TextBox);
+            Timer = new libs.Timer_Functions(Counter_TextBox);
 
             if (WindowState == FormWindowState.Minimized)
             {
-                this.Hide();
+                Hide();
             }
 
-            this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
+            FormClosing += new FormClosingEventHandler(MainForm_FormClosing);
         }
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                Work_Timer_Tray.Visible = true;
-                this.Hide();
+                Hide();
                 e.Cancel = true;
             }
        
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
-       
 
         private void start_Click(object sender, EventArgs e)
         {
@@ -111,7 +106,7 @@ namespace Worktimer
             pause_Button.Text = "Pause";
             pauseToolStripMenuItem.Text = "Pause";
             
-            DialogResult SaveBox = MessageBox.Show("Do you wish to save the data?", "Saveing", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult SaveBox = MessageBox.Show("Do you wish to save the data?", "Saving", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(SaveBox == DialogResult.Yes)
             {
                 Timer.Timer_Save();
@@ -185,7 +180,7 @@ namespace Worktimer
             pause_Button.Text = "Pause";
             pauseToolStripMenuItem.Text = "Pause";
 
-            DialogResult SaveBox = MessageBox.Show("Do you wish to save the data?", "Saveing", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult SaveBox = MessageBox.Show("Do you wish to save the data?", "Saving", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (SaveBox == DialogResult.Yes)
             {
                 Timer.Timer_Save();
@@ -199,8 +194,8 @@ namespace Worktimer
 
         private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Options_Window options = new Options_Window();
-            options.Show(); // then just this
+            OptionsWindow options = new OptionsWindow();
+            options.Show();
         }
     }
 }

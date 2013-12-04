@@ -25,7 +25,7 @@ namespace Worktimer
             }
             else
             {
-                Application.Run(new Form1());
+                Application.Run(new MainForm());
             }
         }
     }

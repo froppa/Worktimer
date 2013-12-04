@@ -60,18 +60,25 @@ namespace Worktimer.libs
         {
             timer.Stop();  
         }
+
         public void Timer_Save()
         {
-            string date = DateTime.Now.ToString();
-            string[] data = date.Split(' ');
+            string datetime = DateTime.Now.ToString();
+            string date = DateTime.Now.ToString("dd-MM-yyyy");
 
             if (Config.Read("SaveTxt", "Saving") == "1")
             {
-                string FilePath = Config.Read("SaveTxt_Path", "Saving") + data[0] + ".txt";
+                string filepath = Config.Read("SaveTxt_Path", "Saving") + date + ".txt";
 
-                using (StreamWriter file = File.AppendText(FilePath))
+                string dir = System.IO.Path.GetDirectoryName(filepath);
+                if (!System.IO.Directory.Exists(dir))
                 {
-                    file.WriteLine("Date: " + data[0] + "\n Timestamp: " + data[1] + "\n Working Hours: " + Time_Format(time) + "\n\n");
+                    System.IO.Directory.CreateDirectory(dir);
+                }
+
+                using (StreamWriter file = File.AppendText(filepath))
+                {
+                    file.WriteLine("Date: " + date + "\nTimestamp: " + datetime + "\nWorking Hours: " + Time_Format(time) + "\n\n");
                 }
 
             }  

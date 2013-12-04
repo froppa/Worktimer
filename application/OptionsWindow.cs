@@ -10,19 +10,13 @@ using System.Windows.Forms;
 
 namespace Worktimer
 {
-    public partial class Options_Window : Form
+    public partial class OptionsWindow : Form
     {
         Handlers.Ini_Handler Config = new Handlers.Ini_Handler();
-        public Options_Window()
+        public OptionsWindow()
         {
             InitializeComponent();
         }
-
-        private void Options_Window_Load(object sender, EventArgs e)
-        {
-            
-        }
-
        
         private void btn_BrowseTxtFolder_Click(object sender, EventArgs e)
         {
@@ -37,8 +31,6 @@ namespace Worktimer
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
-
             if (rbtn_SaveDB.Checked == true)
             {
                 Config.Write("SaveDB", "1", "Saving");

@@ -1,6 +1,6 @@
 ﻿namespace Worktimer
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.Counter_TextBox = new System.Windows.Forms.TextBox();
             this.start_Button = new System.Windows.Forms.Button();
             this.pause_Button = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@
             this.Counter_TextBox.BackColor = System.Drawing.SystemColors.Control;
             this.Counter_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Counter_TextBox.Enabled = false;
-            this.Counter_TextBox.Font = new System.Drawing.Font("Open Sans Light", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Counter_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Counter_TextBox.ForeColor = System.Drawing.Color.Gray;
             this.Counter_TextBox.Location = new System.Drawing.Point(18, 31);
             this.Counter_TextBox.Multiline = true;
@@ -182,7 +182,7 @@
             this.Counter_GroupBox.TabIndex = 4;
             this.Counter_GroupBox.TabStop = false;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -196,11 +196,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Worktimer";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.Tray_Menu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
