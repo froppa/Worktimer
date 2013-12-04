@@ -24,7 +24,7 @@ Changelog:
 
 		* When closing/minmizing the timer window it will stay in the tray which means you have to press exit in the tray to close the program
 		* Added Options where you can select where to store the data ( TXT or DB ( DB IS NOT FINISHED YET THOUGH) and TXT Path )
-		* Re-Structered some code madking it load faster
+		* Re-Structered some code making it load faster
 		* Added loader, visualising the configuration of the program	
 	
 	)
