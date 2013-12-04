@@ -4,11 +4,11 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Timer_Window.Handlers
+namespace Worktimer.Handlers
 {
     class Ini_Handler
     {
-         public string Path;
+        public string Path;
         static string EXE = Assembly.GetExecutingAssembly().GetName().Name;
 
         [DllImport("kernel32")]

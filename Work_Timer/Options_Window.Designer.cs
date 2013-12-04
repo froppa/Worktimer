@@ -1,4 +1,4 @@
-﻿namespace Timer_Window
+﻿namespace Worktimer
 {
     partial class Options_Window
     {
@@ -28,89 +28,100 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rbtn_TxtFile = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Options_Window));
+            this.rbtn_SaveTxt = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.rbtn_SaveDB = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_DbPass = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_DbHost = new System.Windows.Forms.TextBox();
+            this.txt_DbUser = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.txt_DbName = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btn_BrowseTxtFolder = new System.Windows.Forms.Button();
+            this.txt_TxtPath = new System.Windows.Forms.TextBox();
+            this.btn_CancelOptions = new System.Windows.Forms.Button();
+            this.btn_ApplyOptions = new System.Windows.Forms.Button();
+            this.btn_SaveOptions = new System.Windows.Forms.Button();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // rbtn_TxtFile
+            // rbtn_SaveTxt
             // 
-            this.rbtn_TxtFile.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rbtn_TxtFile.AutoSize = true;
-            this.rbtn_TxtFile.Location = new System.Drawing.Point(4, 4);
-            this.rbtn_TxtFile.Name = "rbtn_TxtFile";
-            this.rbtn_TxtFile.Size = new System.Drawing.Size(107, 17);
-            this.rbtn_TxtFile.TabIndex = 0;
-            this.rbtn_TxtFile.TabStop = true;
-            this.rbtn_TxtFile.Text = "Save to a text file";
-            this.rbtn_TxtFile.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox1.Location = new System.Drawing.Point(118, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(281, 20);
-            this.textBox1.TabIndex = 1;
+            this.rbtn_SaveTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rbtn_SaveTxt.AutoSize = true;
+            this.rbtn_SaveTxt.Location = new System.Drawing.Point(4, 31);
+            this.rbtn_SaveTxt.Name = "rbtn_SaveTxt";
+            this.rbtn_SaveTxt.Size = new System.Drawing.Size(107, 17);
+            this.rbtn_SaveTxt.TabIndex = 0;
+            this.rbtn_SaveTxt.TabStop = true;
+            this.rbtn_SaveTxt.Text = "Save to a text file";
+            this.rbtn_SaveTxt.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel3
             // 
+            this.tableLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.tableLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel3.CausesValidation = false;
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.Controls.Add(this.radioButton1, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.rbtn_SaveDB, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel2, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.rbtn_TxtFile, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.rbtn_SaveTxt, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel1, 1, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(1, 5);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.Padding = new System.Windows.Forms.Padding(0, 20, 20, 0);
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(411, 169);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(508, 220);
             this.tableLayoutPanel3.TabIndex = 2;
+            // 
+            // rbtn_SaveDB
+            // 
+            this.rbtn_SaveDB.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rbtn_SaveDB.AutoSize = true;
+            this.rbtn_SaveDB.Location = new System.Drawing.Point(3, 79);
+            this.rbtn_SaveDB.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
+            this.rbtn_SaveDB.Name = "rbtn_SaveDB";
+            this.rbtn_SaveDB.Size = new System.Drawing.Size(109, 17);
+            this.rbtn_SaveDB.TabIndex = 7;
+            this.rbtn_SaveDB.TabStop = true;
+            this.rbtn_SaveDB.Text = "Save to database";
+            this.rbtn_SaveDB.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 287F));
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.textBox4, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.txt_DbPass, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBox3, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBox2, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.txt_DbHost, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txt_DbUser, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.textBox5, 1, 3);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(118, 29);
+            this.tableLayoutPanel2.Controls.Add(this.txt_DbName, 1, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(118, 79);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(352, 140);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(390, 140);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // label4
@@ -124,13 +135,13 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Database Name";
             // 
-            // textBox4
+            // txt_DbPass
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox4.Location = new System.Drawing.Point(106, 75);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 9;
+            this.txt_DbPass.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_DbPass.Location = new System.Drawing.Point(106, 75);
+            this.txt_DbPass.Name = "txt_DbPass";
+            this.txt_DbPass.Size = new System.Drawing.Size(191, 20);
+            this.txt_DbPass.TabIndex = 9;
             // 
             // label2
             // 
@@ -143,21 +154,21 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Host";
             // 
-            // textBox3
+            // txt_DbHost
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox3.Location = new System.Drawing.Point(106, 7);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 4;
+            this.txt_DbHost.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_DbHost.Location = new System.Drawing.Point(106, 7);
+            this.txt_DbHost.Name = "txt_DbHost";
+            this.txt_DbHost.Size = new System.Drawing.Size(191, 20);
+            this.txt_DbHost.TabIndex = 4;
             // 
-            // textBox2
+            // txt_DbUser
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox2.Location = new System.Drawing.Point(106, 42);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 6;
+            this.txt_DbUser.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_DbUser.Location = new System.Drawing.Point(106, 42);
+            this.txt_DbUser.Name = "txt_DbUser";
+            this.txt_DbUser.Size = new System.Drawing.Size(191, 20);
+            this.txt_DbUser.TabIndex = 6;
             // 
             // label1
             // 
@@ -181,52 +192,90 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Password";
             // 
-            // textBox5
+            // txt_DbName
             // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox5.Location = new System.Drawing.Point(106, 110);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 11;
+            this.txt_DbName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_DbName.Location = new System.Drawing.Point(106, 110);
+            this.txt_DbName.Name = "txt_DbName";
+            this.txt_DbName.Size = new System.Drawing.Size(191, 20);
+            this.txt_DbName.TabIndex = 11;
             // 
-            // radioButton1
+            // tableLayoutPanel1
             // 
-            this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(3, 29);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(109, 17);
-            this.radioButton1.TabIndex = 7;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Save to database";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btn_BrowseTxtFolder, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txt_TxtPath, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(118, 23);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(384, 33);
+            this.tableLayoutPanel1.TabIndex = 8;
             // 
-            // button1
+            // label5
             // 
-            this.button1.Location = new System.Drawing.Point(243, 238);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(33, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Path";
             // 
-            // button2
+            // btn_BrowseTxtFolder
             // 
-            this.button2.Location = new System.Drawing.Point(324, 238);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Apply";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_BrowseTxtFolder.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_BrowseTxtFolder.Location = new System.Drawing.Point(306, 5);
+            this.btn_BrowseTxtFolder.Name = "btn_BrowseTxtFolder";
+            this.btn_BrowseTxtFolder.Size = new System.Drawing.Size(75, 23);
+            this.btn_BrowseTxtFolder.TabIndex = 1;
+            this.btn_BrowseTxtFolder.Text = "Browse";
+            this.btn_BrowseTxtFolder.UseVisualStyleBackColor = true;
+            this.btn_BrowseTxtFolder.Click += new System.EventHandler(this.btn_BrowseTxtFolder_Click);
             // 
-            // button3
+            // txt_TxtPath
             // 
-            this.button3.Location = new System.Drawing.Point(162, 238);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Ok";
-            this.button3.UseVisualStyleBackColor = true;
+            this.txt_TxtPath.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_TxtPath.Location = new System.Drawing.Point(105, 6);
+            this.txt_TxtPath.Name = "txt_TxtPath";
+            this.txt_TxtPath.Size = new System.Drawing.Size(192, 20);
+            this.txt_TxtPath.TabIndex = 2;
+            // 
+            // btn_CancelOptions
+            // 
+            this.btn_CancelOptions.Location = new System.Drawing.Point(353, 249);
+            this.btn_CancelOptions.Name = "btn_CancelOptions";
+            this.btn_CancelOptions.Size = new System.Drawing.Size(75, 23);
+            this.btn_CancelOptions.TabIndex = 3;
+            this.btn_CancelOptions.Text = "Cancel";
+            this.btn_CancelOptions.UseVisualStyleBackColor = true;
+            this.btn_CancelOptions.Click += new System.EventHandler(this.btn_CancelOptions_Click);
+            // 
+            // btn_ApplyOptions
+            // 
+            this.btn_ApplyOptions.Location = new System.Drawing.Point(434, 249);
+            this.btn_ApplyOptions.Name = "btn_ApplyOptions";
+            this.btn_ApplyOptions.Size = new System.Drawing.Size(75, 23);
+            this.btn_ApplyOptions.TabIndex = 4;
+            this.btn_ApplyOptions.Text = "Apply";
+            this.btn_ApplyOptions.UseVisualStyleBackColor = true;
+            this.btn_ApplyOptions.Click += new System.EventHandler(this.btn_ApplyOptions_Click);
+            // 
+            // btn_SaveOptions
+            // 
+            this.btn_SaveOptions.Location = new System.Drawing.Point(272, 249);
+            this.btn_SaveOptions.Name = "btn_SaveOptions";
+            this.btn_SaveOptions.Size = new System.Drawing.Size(75, 23);
+            this.btn_SaveOptions.TabIndex = 5;
+            this.btn_SaveOptions.Text = "Ok";
+            this.btn_SaveOptions.UseVisualStyleBackColor = true;
+            this.btn_SaveOptions.Click += new System.EventHandler(this.button3_Click);
             // 
             // Options_Window
             // 
@@ -234,43 +283,49 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(411, 273);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(514, 284);
+            this.Controls.Add(this.btn_SaveOptions);
+            this.Controls.Add(this.btn_ApplyOptions);
+            this.Controls.Add(this.btn_CancelOptions);
             this.Controls.Add(this.tableLayoutPanel3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Options_Window";
-            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "Options_Window";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Options";
             this.Load += new System.EventHandler(this.Options_Window_Load);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.RadioButton rbtn_TxtFile;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RadioButton rbtn_SaveTxt;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbtn_SaveDB;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_DbPass;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_DbHost;
+        private System.Windows.Forms.TextBox txt_DbUser;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txt_DbName;
+        private System.Windows.Forms.Button btn_CancelOptions;
+        private System.Windows.Forms.Button btn_ApplyOptions;
+        private System.Windows.Forms.Button btn_SaveOptions;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btn_BrowseTxtFolder;
+        private System.Windows.Forms.TextBox txt_TxtPath;
     }
 }

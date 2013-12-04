@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Timer_Window.libs
+namespace Worktimer.libs
 {
     public class Timer_Functions
     {
@@ -67,7 +67,7 @@ namespace Timer_Window.libs
 
             if (Config.Read("SaveTxt", "Saving") == "1")
             {
-                string FilePath = Config.Read("SaveTxtPath", "Saving") + data[0] + ".txt";
+                string FilePath = Config.Read("SaveTxt_Path", "Saving") + data[0] + ".txt";
 
                 using (StreamWriter file = File.AppendText(FilePath))
                 {

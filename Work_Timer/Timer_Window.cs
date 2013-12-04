@@ -25,17 +25,18 @@ using System.Windows.Forms;
  * Project manager
  * Port to Mac
  * 
- * 
+ * Restructure some of the code, making a Core file to init everything instead of the timing window.. 
+ * Make a bootstrap
  * */
 
 
-namespace Timer_Window
+namespace Worktimer
 {
-    public partial class Timer_Window : Form
+    public partial class Form1 : Form
     {
         libs.Timer_Functions Timer;
 
-        public Timer_Window()
+        public Form1()
         {
             InitializeComponent();
             Timer = new libs.Timer_Functions(this.Counter_TextBox);
@@ -44,22 +45,24 @@ namespace Timer_Window
             {
                 this.Hide();
             }
-        }
 
-      
+            this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
+        }
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Work_Timer_Tray.Visible = true;
+                this.Hide();
+                e.Cancel = true;
+            }
+       
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Handlers.Ini_Handler Config = new Handlers.Ini_Handler();
-
-            if (!Config.KeyExists("SaveTxt", "Saving") || !Config.KeyExists("SaveTxtPath", "Saving"))
-            {
-                Config.Write("SaveTxt", "1", "Saving");
-                Config.Write("SaveTxtPath", System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\", "Saving");
-            }
-            
-            //MessageBox.Show(System.Reflection.Assembly.GetExecutingAssembly().Location);
-        }       
+        }
+       
 
         private void start_Click(object sender, EventArgs e)
         {
@@ -142,8 +145,7 @@ namespace Timer_Window
             this.stopToolStripMenuItem.Enabled = true;
 
             pause_Button.Text = "Pause";
-            pauseToolStripMenuItem.Text = "Pause";
-           
+            pauseToolStripMenuItem.Text = "Pause";        
           
         
 
