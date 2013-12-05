@@ -12,9 +12,8 @@ namespace Worktimer
 {
     public partial class Loader : Form
     {
-        Handlers.Ini_Handler Config = new Handlers.Ini_Handler();
-        MainForm Timer_Window = new MainForm();
-     
+        handlers.ini_file Config = new handlers.ini_file();
+        MainForm timerForm = new MainForm();     
 
         public Loader()
         {
@@ -24,17 +23,17 @@ namespace Worktimer
         private void Loader_Load(object sender, EventArgs e)
         {
             this.timer1.Start();
-
-            // If everything is set correctly show Timer_Window and close this ---- Changed it so the Program.cs check if it exist, if it does it wont load this file.
           
             Config.Write("SaveTxt", "1", "Saving");
-            Config.Write("SaveTxt_Path", @"\data\", "Saving");
+            Config.Write("SaveTxt_Path", System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"\work\", "Saving");
 
             Config.Write("SaveDB", "0", "Saving");
             Config.Write("SaveDB_Host", "hostname", "Saving");
             Config.Write("SaveDB_User", "username", "Saving");
             Config.Write("SaveDB_Pass", "password", "Saving");
             Config.Write("SaveDB_Name", "databasename", "Saving");
+
+            Config.Write("MinimizeTray", "1", "General");
                
             
         }
@@ -47,11 +46,8 @@ namespace Worktimer
             {
                 this.Hide();
                 this.timer1.Stop();
-                Timer_Window.Show();
-
-            }
-   
-            
+                timerForm.Show();
+            }            
             
         }
 

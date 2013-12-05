@@ -15,18 +15,15 @@ using System.Windows.Forms;
  * 
  * *** TO-DO ***
  * 
- * Config file ( DONE )
- * Changing icon ( DONE )
  * Change GUI
- * Tray_Icon ( Right click = Start/Stop/pause timer ) ( DONE)
  * Installer
  * Alarm
- * Current Project ( be able to make a project and manage hours )
- * Project manager
+ * Project manager ( be able to make a project and manage hours )
+ * 
  * Port to Mac
  * 
- * Restructure some of the code, making a Core file to init everything instead of the timing window.. 
- * Make a bootstrap
+ * Make a bootstrap ( KINDA DONE )
+ * 
  * */
 
 
@@ -35,16 +32,12 @@ namespace Worktimer
     public partial class MainForm : Form
     {
         libs.Timer_Functions Timer;
+        handlers.ini_file Config = new handlers.ini_file();
 
         public MainForm()
         {
             InitializeComponent();
             Timer = new libs.Timer_Functions(Counter_TextBox);
-
-            if (WindowState == FormWindowState.Minimized)
-            {
-                Hide();
-            }
 
             FormClosing += new FormClosingEventHandler(MainForm_FormClosing);
         }
@@ -52,8 +45,11 @@ namespace Worktimer
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                Hide();
-                e.Cancel = true;
+                if (Config.Read("MinimizeTray", "General") == "1")
+                {
+                    Hide();
+                    e.Cancel = true;
+                }
             }
        
         }
@@ -126,6 +122,7 @@ namespace Worktimer
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Help! - if timer is still running ask if u want to save it. /
             Environment.Exit(0);
         }
 
@@ -194,7 +191,7 @@ namespace Worktimer
 
         private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OptionsWindow options = new OptionsWindow();
+            Options options = new Options();
             options.Show();
         }
     }

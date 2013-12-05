@@ -14,10 +14,11 @@ namespace Worktimer
         [STAThread]
         static void Main()
         {
-            Handlers.Ini_Handler Config = new Handlers.Ini_Handler();
+            handlers.ini_file Config = new handlers.ini_file();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.ApplicationExit += Application_ApplicationExit;
 
             if (!Config.KeyExists("SaveTxt", "Saving") || !Config.KeyExists("SaveTxt_Path", "Saving")) // Need to check if the file exists instead.
             {
@@ -27,6 +28,11 @@ namespace Worktimer
             {
                 Application.Run(new MainForm());
             }
+        }
+
+        static void Application_ApplicationExit(object sender, EventArgs e)
+        {
+            // If the timer is running, ask if you want the save the data.
         }
     }
 }

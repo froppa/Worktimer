@@ -47,7 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Images\icon.ico</ApplicationIcon>
+    <ApplicationIcon>images\icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>
@@ -66,7 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Handlers\Ini_Handler.cs" />
+    <Compile Include="handlers\ini.cs" />
     <Compile Include="libs\Timer_Functions.cs" />
     <Compile Include="Loader.cs">
       <SubType>Form</SubType>
@@ -74,11 +74,11 @@
     <Compile Include="Loader.Designer.cs">
       <DependentUpon>Loader.cs</DependentUpon>
     </Compile>
-    <Compile Include="OptionsWindow.cs">
+    <Compile Include="Options.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OptionsWindow.Designer.cs">
-      <DependentUpon>OptionsWindow.cs</DependentUpon>
+    <Compile Include="Options.Designer.cs">
+      <DependentUpon>Options.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -91,8 +91,8 @@
     <EmbeddedResource Include="Loader.resx">
       <DependentUpon>Loader.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OptionsWindow.resx">
-      <DependentUpon>OptionsWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Options.resx">
+      <DependentUpon>Options.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -138,7 +138,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\icon.ico" />
+    <Content Include="images\icon.ico" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

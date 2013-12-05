@@ -115,7 +115,7 @@
             // 
             this.Work_Timer_Tray.ContextMenuStrip = this.Tray_Menu;
             this.Work_Timer_Tray.Icon = ((System.Drawing.Icon)(resources.GetObject("Work_Timer_Tray.Icon")));
-            this.Work_Timer_Tray.Text = "Worktimer - 00:00:00";
+            this.Work_Timer_Tray.Text = "Worktimer - "; // How do i get the damn time.. and make it update.
             this.Work_Timer_Tray.Visible = true;
             this.Work_Timer_Tray.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
@@ -197,7 +197,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Worktimer";
             this.Tray_Menu.ResumeLayout(false);

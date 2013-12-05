@@ -1,7 +1,7 @@
 /**
 *	Program: Worktimer
 *
-*	Version: 0.1
+*	Version: 0.2
 *
 *	Author: Sebastian Dandanell-Fridthjof
 *
@@ -20,12 +20,13 @@ To come:
 
 Changelog:
 	
-	04-12-2013 Version 0.2 (
+	05-12-2013 Version 0.2 (
 
-		* When closing/minmizing the timer window it will stay in the tray which means you have to press exit in the tray to close the program
-		* Added Options where you can select where to store the data ( TXT or DB ( DB IS NOT FINISHED YET THOUGH) and TXT Path )
-		* Re-Structered some code making it load faster
-		* Added loader, visualising the configuration of the program	
+		* When closing the timer window it will stay in the tray which means you have to press exit in the tray to close the program
+		* Added Options where you can select where to store the data ( TXT or DB ( DB IS NOT FINISHED YET THOUGH) and TXT Path ) and other stuff
+		* Re-Structered some code madking it load faster
+		* Added loader, visualising the configuration of the program
+			
 	
 	)
 

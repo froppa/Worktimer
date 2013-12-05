@@ -10,13 +10,25 @@ using System.Windows.Forms;
 
 namespace Worktimer
 {
-    public partial class OptionsWindow : Form
+    public partial class Options : Form
     {
-        Handlers.Ini_Handler Config = new Handlers.Ini_Handler();
-        public OptionsWindow()
+        handlers.ini_file Config = new handlers.ini_file();
+        public Options()
         {
             InitializeComponent();
-        }
+
+            rbtn_SaveTxt.Checked = Config.Read("SaveTxt", "Saving") == "1";
+
+            if (!rbtn_SaveTxt.Checked)
+            {
+                rbtn_SaveDB.Checked = true;
+            }
+          
+            cbTray.Checked = Config.Read("MinimizeTray", "General") == "1";
+
+            txt_TxtPath.Text = Config.Read("SaveTxt_Path", "Saving");
+
+        }        
        
         private void btn_BrowseTxtFolder_Click(object sender, EventArgs e)
         {
@@ -25,7 +37,7 @@ namespace Worktimer
             if (folderPath.ShowDialog() == DialogResult.OK)
             {
                 // put the path into the txtbox
-                txt_TxtPath.Text = folderPath.SelectedPath + "\\";
+                txt_TxtPath.Text = folderPath.SelectedPath + @"\";
             }
         }
 
@@ -45,7 +57,7 @@ namespace Worktimer
                 Config.Write("SaveDB", "0", "Saving");
                 Config.Write("SaveTxt", "1", "Saving");
 
-                Config.Write("SaveTxtPath", txt_TxtPath.Text + "\\", "Saving");
+                Config.Write("SaveTxt_Path", txt_TxtPath.Text, "Saving");
             }
             else
             {
@@ -78,7 +90,7 @@ namespace Worktimer
                 Config.Write("SaveDB", "0", "Saving");
                 Config.Write("SaveTxt", "1", "Saving");
 
-                Config.Write("SaveTxtPath", txt_TxtPath.Text, "Saving");
+                Config.Write("SaveTxt_Path", txt_TxtPath.Text, "Saving");
             }
             else
             {
@@ -89,6 +101,11 @@ namespace Worktimer
 
             btn_ApplyOptions.Enabled = false;
 
+        }
+
+        private void cbTray_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.Write("MinimizeTray", cbTray.Checked ? "1" : "0", "General");
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Worktimer
 {
-    partial class OptionsWindow
+    partial class Options
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptionsWindow));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Options));
             this.rbtn_SaveTxt = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.rbtn_SaveDB = new System.Windows.Forms.RadioButton();
@@ -37,10 +37,10 @@
             this.txt_DbPass = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_DbHost = new System.Windows.Forms.TextBox();
-            this.txt_DbUser = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_DbName = new System.Windows.Forms.TextBox();
+            this.txt_DbUser = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_BrowseTxtFolder = new System.Windows.Forms.Button();
@@ -48,9 +48,14 @@
             this.btn_CancelOptions = new System.Windows.Forms.Button();
             this.btn_ApplyOptions = new System.Windows.Forms.Button();
             this.btn_SaveOptions = new System.Windows.Forms.Button();
+            this.tabOptions = new System.Windows.Forms.TabControl();
+            this.tabGeneral = new System.Windows.Forms.TabPage();
+            this.cbTray = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tabOptions.SuspendLayout();
+            this.tabGeneral.SuspendLayout();
             this.SuspendLayout();
             // 
             // rbtn_SaveTxt
@@ -77,13 +82,13 @@
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel2, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.rbtn_SaveTxt, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel1, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(1, 5);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 6);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.Padding = new System.Windows.Forms.Padding(0, 20, 20, 0);
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(508, 220);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(562, 220);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // rbtn_SaveDB
@@ -103,15 +108,15 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 287F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 330F));
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.txt_DbPass, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txt_DbHost, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.txt_DbUser, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.txt_DbName, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.txt_DbUser, 1, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(118, 79);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -121,7 +126,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(390, 140);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(433, 140);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // label4
@@ -140,7 +145,7 @@
             this.txt_DbPass.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_DbPass.Location = new System.Drawing.Point(106, 75);
             this.txt_DbPass.Name = "txt_DbPass";
-            this.txt_DbPass.Size = new System.Drawing.Size(191, 20);
+            this.txt_DbPass.Size = new System.Drawing.Size(239, 20);
             this.txt_DbPass.TabIndex = 9;
             // 
             // label2
@@ -159,16 +164,8 @@
             this.txt_DbHost.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_DbHost.Location = new System.Drawing.Point(106, 7);
             this.txt_DbHost.Name = "txt_DbHost";
-            this.txt_DbHost.Size = new System.Drawing.Size(191, 20);
+            this.txt_DbHost.Size = new System.Drawing.Size(239, 20);
             this.txt_DbHost.TabIndex = 4;
-            // 
-            // txt_DbUser
-            // 
-            this.txt_DbUser.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_DbUser.Location = new System.Drawing.Point(106, 42);
-            this.txt_DbUser.Name = "txt_DbUser";
-            this.txt_DbUser.Size = new System.Drawing.Size(191, 20);
-            this.txt_DbUser.TabIndex = 6;
             // 
             // label1
             // 
@@ -197,15 +194,23 @@
             this.txt_DbName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_DbName.Location = new System.Drawing.Point(106, 110);
             this.txt_DbName.Name = "txt_DbName";
-            this.txt_DbName.Size = new System.Drawing.Size(191, 20);
+            this.txt_DbName.Size = new System.Drawing.Size(239, 20);
             this.txt_DbName.TabIndex = 11;
+            // 
+            // txt_DbUser
+            // 
+            this.txt_DbUser.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_DbUser.Location = new System.Drawing.Point(106, 42);
+            this.txt_DbUser.Name = "txt_DbUser";
+            this.txt_DbUser.Size = new System.Drawing.Size(239, 20);
+            this.txt_DbUser.TabIndex = 6;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.05028F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.94972F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btn_BrowseTxtFolder, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.txt_TxtPath, 1, 0);
@@ -214,7 +219,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(384, 33);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(433, 33);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // label5
@@ -231,9 +236,9 @@
             // btn_BrowseTxtFolder
             // 
             this.btn_BrowseTxtFolder.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_BrowseTxtFolder.Location = new System.Drawing.Point(306, 5);
+            this.btn_BrowseTxtFolder.Location = new System.Drawing.Point(361, 5);
             this.btn_BrowseTxtFolder.Name = "btn_BrowseTxtFolder";
-            this.btn_BrowseTxtFolder.Size = new System.Drawing.Size(75, 23);
+            this.btn_BrowseTxtFolder.Size = new System.Drawing.Size(69, 23);
             this.btn_BrowseTxtFolder.TabIndex = 1;
             this.btn_BrowseTxtFolder.Text = "Browse";
             this.btn_BrowseTxtFolder.UseVisualStyleBackColor = true;
@@ -242,14 +247,14 @@
             // txt_TxtPath
             // 
             this.txt_TxtPath.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_TxtPath.Location = new System.Drawing.Point(105, 6);
+            this.txt_TxtPath.Location = new System.Drawing.Point(107, 6);
             this.txt_TxtPath.Name = "txt_TxtPath";
-            this.txt_TxtPath.Size = new System.Drawing.Size(192, 20);
+            this.txt_TxtPath.Size = new System.Drawing.Size(238, 20);
             this.txt_TxtPath.TabIndex = 2;
             // 
             // btn_CancelOptions
             // 
-            this.btn_CancelOptions.Location = new System.Drawing.Point(353, 249);
+            this.btn_CancelOptions.Location = new System.Drawing.Point(417, 401);
             this.btn_CancelOptions.Name = "btn_CancelOptions";
             this.btn_CancelOptions.Size = new System.Drawing.Size(75, 23);
             this.btn_CancelOptions.TabIndex = 3;
@@ -259,7 +264,7 @@
             // 
             // btn_ApplyOptions
             // 
-            this.btn_ApplyOptions.Location = new System.Drawing.Point(434, 249);
+            this.btn_ApplyOptions.Location = new System.Drawing.Point(498, 401);
             this.btn_ApplyOptions.Name = "btn_ApplyOptions";
             this.btn_ApplyOptions.Size = new System.Drawing.Size(75, 23);
             this.btn_ApplyOptions.TabIndex = 4;
@@ -269,7 +274,7 @@
             // 
             // btn_SaveOptions
             // 
-            this.btn_SaveOptions.Location = new System.Drawing.Point(272, 249);
+            this.btn_SaveOptions.Location = new System.Drawing.Point(336, 401);
             this.btn_SaveOptions.Name = "btn_SaveOptions";
             this.btn_SaveOptions.Size = new System.Drawing.Size(75, 23);
             this.btn_SaveOptions.TabIndex = 5;
@@ -277,20 +282,52 @@
             this.btn_SaveOptions.UseVisualStyleBackColor = true;
             this.btn_SaveOptions.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Options_Window
+            // tabOptions
+            // 
+            this.tabOptions.Controls.Add(this.tabGeneral);
+            this.tabOptions.Location = new System.Drawing.Point(3, 2);
+            this.tabOptions.Name = "tabOptions";
+            this.tabOptions.SelectedIndex = 0;
+            this.tabOptions.Size = new System.Drawing.Size(579, 393);
+            this.tabOptions.TabIndex = 6;
+            // 
+            // tabGeneral
+            // 
+            this.tabGeneral.Controls.Add(this.cbTray);
+            this.tabGeneral.Controls.Add(this.tableLayoutPanel3);
+            this.tabGeneral.Location = new System.Drawing.Point(4, 22);
+            this.tabGeneral.Name = "tabGeneral";
+            this.tabGeneral.Padding = new System.Windows.Forms.Padding(3);
+            this.tabGeneral.Size = new System.Drawing.Size(571, 367);
+            this.tabGeneral.TabIndex = 0;
+            this.tabGeneral.Text = "General";
+            this.tabGeneral.UseVisualStyleBackColor = true;
+            // 
+            // cbTray
+            // 
+            this.cbTray.AutoSize = true;
+            this.cbTray.Location = new System.Drawing.Point(6, 244);
+            this.cbTray.Name = "cbTray";
+            this.cbTray.Size = new System.Drawing.Size(163, 17);
+            this.cbTray.TabIndex = 3;
+            this.cbTray.Text = "Minimize to tray when closing";
+            this.cbTray.UseVisualStyleBackColor = true;
+            this.cbTray.CheckedChanged += new System.EventHandler(this.cbTray_CheckedChanged);
+            // 
+            // Options
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(514, 284);
+            this.ClientSize = new System.Drawing.Size(584, 436);
+            this.Controls.Add(this.tabOptions);
             this.Controls.Add(this.btn_SaveOptions);
             this.Controls.Add(this.btn_ApplyOptions);
             this.Controls.Add(this.btn_CancelOptions);
-            this.Controls.Add(this.tableLayoutPanel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Options_Window";
+            this.Name = "Options";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -301,6 +338,9 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tabOptions.ResumeLayout(false);
+            this.tabGeneral.ResumeLayout(false);
+            this.tabGeneral.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -326,5 +366,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_BrowseTxtFolder;
         private System.Windows.Forms.TextBox txt_TxtPath;
+        private System.Windows.Forms.TabControl tabOptions;
+        private System.Windows.Forms.TabPage tabGeneral;
+        private System.Windows.Forms.CheckBox cbTray;
     }
 }

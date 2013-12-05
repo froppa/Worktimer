@@ -4,9 +4,9 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Worktimer.Handlers
+namespace Worktimer.handlers
 {
-    class Ini_Handler
+    class ini_file
     {
         public string Path;
         static string EXE = Assembly.GetExecutingAssembly().GetName().Name;
@@ -17,7 +17,7 @@ namespace Worktimer.Handlers
         [DllImport("kernel32")]
         static extern int GetPrivateProfileString(string Section, string Key, string Default, StringBuilder RetVal, int Size, string FilePath);
 
-        public Ini_Handler(string IniPath = null)
+        public ini_file(string IniPath = null)
         {
             Path = new FileInfo(IniPath != null ? IniPath : EXE + ".ini").FullName.ToString();
         }

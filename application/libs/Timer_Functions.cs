@@ -15,7 +15,7 @@ namespace Worktimer.libs
         int time = 0;
 
         TextBox textbox = new TextBox();
-        Handlers.Ini_Handler Config = new Handlers.Ini_Handler();
+        handlers.ini_file Config = new handlers.ini_file();
         
 
         public Timer_Functions(TextBox x)
@@ -78,7 +78,8 @@ namespace Worktimer.libs
 
                 using (StreamWriter file = File.AppendText(filepath))
                 {
-                    file.WriteLine("Date: " + date + "\nTimestamp: " + datetime + "\nWorking Hours: " + Time_Format(time) + "\n\n");
+                    file.WriteLine("Date: " + date + " Timestamp: " + datetime + " Working Hours: " + Time_Format(time) + "\n\n");
+                    // Find a better view..
                 }
 
             }  
