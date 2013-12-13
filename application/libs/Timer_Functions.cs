@@ -16,20 +16,34 @@ namespace Worktimer.libs
 
         TextBox textbox = new TextBox();
         handlers.ini_file Config = new handlers.ini_file();
-        
+
+        bool running;
+
+        public bool Running
+        {
+            get
+            {
+                return running;
+            }
+            set
+            {
+                running = value;
+            }
+        }
 
         public Timer_Functions(TextBox x)
         {
             textbox = x;
-            textbox.Text = Time_Format(0);           
+            textbox.Text = Time_Format(0);
+            running = false;
         }
 
         public void Timer_Start()
         {
-         
             timer = new Timer();
             timer.Interval = 1000;
             timer.Tick += Time_Elapsed;
+            running = true;
             timer.Start();
         }
 
@@ -54,7 +68,8 @@ namespace Worktimer.libs
         public void Timer_Stop()
         {
             time = 0;
-            timer.Stop();            
+            running = false;
+            timer.Stop();
         }
         public void Timer_Pause()
         {

@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using Elysium;
 
 /* *** BUGS ***
  * 
@@ -26,7 +25,6 @@ using System.Windows.Forms;
  * 
  * */
 
-
 namespace Worktimer
 {
     public partial class MainForm : Form
@@ -41,6 +39,7 @@ namespace Worktimer
 
             FormClosing += new FormClosingEventHandler(MainForm_FormClosing);
         }
+
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
@@ -51,9 +50,7 @@ namespace Worktimer
                     e.Cancel = true;
                 }
             }
-       
         }
-
 
         private void start_Click(object sender, EventArgs e)
         {
@@ -122,8 +119,19 @@ namespace Worktimer
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Help! - if timer is still running ask if u want to save it. /
-            Environment.Exit(0);
+            if (Timer.Running)
+            {
+                DialogResult result = MessageBox.Show("Do you want to save time?", "Worktimer", MessageBoxButtons.YesNoCancel);
+                if (result != DialogResult.Cancel)
+                {
+                    if (result == DialogResult.Yes)
+                    {
+                        Timer.Timer_Save();
+                    }
+
+                    Environment.Exit(0);
+                }
+            }
         }
 
         private void startToolStripMenuItem_Click(object sender, EventArgs e)
