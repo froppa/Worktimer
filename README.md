@@ -3,7 +3,7 @@
 *
 *	Version: 0.2
 *
-*	Author: Sebastian Dandanell-Fridthjof
+*	Author: froppa
 *
 *	Desc: Program with Start/Pause/Stop(save) features, which can be used when working, when you press start it will start counting until u Pause or Stop it
 *	When you press stop it will ask you if you want to save the "Data" the date and the amount of working hours.
